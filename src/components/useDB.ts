@@ -1,13 +1,9 @@
 import { Firebase_Config } from "@/constants";
 import { initializeApp } from "@firebase/app";
 import { child, get, getDatabase, ref, set } from "@firebase/database";
-import { useCallback, useId } from "react";
+import { useCallback } from "react";
 import { Word } from "./types";
-import { base64Encode } from "@firebase/util";
 
-interface HookResponse {
-  initializeDB: () => void;
-}
 const app = initializeApp(Firebase_Config);
 const db = getDatabase(app);
 const VocanDBRef = child(ref(db), "vocab");
@@ -23,7 +19,8 @@ export const useDB = () => {
     return x.toJSON();
   }, []);
 
-  const saveWord = useCallback(async (word: string) => {
+  const saveWord = useCallback(async (payload: { word: string; description: string }) => {
+    const { word, description } = payload;
     const timeStamp = Date.now();
     const id: string = String(timeStamp);
     const newWord: Word = {
@@ -33,9 +30,13 @@ export const useDB = () => {
       createdBy: "SL",
       updatedAt: timeStamp,
       updatedBy: "SL",
-      description: "",
+      description,
     };
-    await set(ref(db, "vocab/" + id), newWord);
+    try {
+      await set(ref(db, "vocab/" + id), newWord);
+    } catch (e) {
+      console.error(e);
+    }
   }, []);
 
   return {

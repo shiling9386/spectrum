@@ -8,37 +8,48 @@ import "react-toastify/dist/ReactToastify.css";
 
 const User = () => {
   const [newWord, setNewWord] = useState("");
-  const [isSaving, setIsSaving] = useState(false);
+  const [description, setDescription] = useState("");
   const { saveWord } = useDB();
 
+  const clearForm = () => {
+    setNewWord("");
+    setDescription("");
+  };
   const handleSave = useCallback(() => {
-    setIsSaving(true);
-    saveWord(newWord)
+    saveWord({
+      word: newWord,
+      description,
+    })
       .then(() => {
         toast("Wow so easy!", {
           type: "success",
           autoClose: 2000,
         });
       })
-      .catch(() => {
-        toast("Oops, Something went wrong!", {
+      .catch((err) => {
+        toast("Oops, Something went wrong!" + err, {
           type: "error",
           autoClose: 3000,
         });
       })
       .finally(() => {
-        setIsSaving(false);
+        clearForm();
       });
-  }, [newWord, saveWord]);
+  }, [description, newWord, saveWord]);
 
   return (
     <div className={styles.main}>
       My Vocabulary
       <ToastContainer />
       <div>
-        <input value={newWord} onChange={(e) => setNewWord(e.target.value)} />
+        <input placeholder="Word" value={newWord} onChange={(e) => setNewWord(e.target.value)} />
+        <textarea
+          placeholder="Description"
+          value={description}
+          onChange={(e) => setDescription(e.target.value)}
+        />
         <button disabled={newWord === ""} onClick={handleSave}>
-          {isSaving ? "Saving..." : "Save"}
+          Save
         </button>
       </div>
     </div>
