@@ -5,6 +5,7 @@ import { useCallback, useState } from "react";
 import { useDB } from "@/components/useDB";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import Link from "next/link";
 
 const User = () => {
   const [newWord, setNewWord] = useState("");
@@ -39,15 +40,23 @@ const User = () => {
 
   return (
     <div className={styles.main}>
+      <Link href={"/"}>
+        <span>&crarr;</span> Back
+      </Link>
+      <br />
       My Vocabulary
       <ToastContainer />
       <div>
         <input placeholder="Word" value={newWord} onChange={(e) => setNewWord(e.target.value)} />
+        <br />
+        <br />
         <textarea
           placeholder="Description"
           value={description}
+          rows={4}
           onChange={(e) => setDescription(e.target.value)}
         />
+        <br />
         <button disabled={newWord === ""} onClick={handleSave}>
           Save
         </button>
