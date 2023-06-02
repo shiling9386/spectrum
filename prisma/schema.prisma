@@ -1,0 +1,36 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+
+model Bookmark {
+  id            Int      @id @default(autoincrement())
+  word          String   @db.VarChar(255)
+  createdAt     DateTime @default(now()) @db.Timestamp(6)
+  createdBy     Int
+  description   String    @db.LongText
+  exmaples      SentenceExample[]
+  User   User @relation(fields: [createdBy], references: [id] )
+}
+
+model SentenceExample {
+  id Int @id @default(autoincrement())
+  bookmarkId Int
+  sentence String @db.MediumText
+  Bookmark Bookmark @relation(fields: [bookmarkId], references: [id])
+}
+
+model User {
+  id      Int      @id @default(autoincrement())
+  name    String?  @db.VarChar(255)
+  email     String   @unique @db.VarChar(255)
+  Bookmark   Bookmark[]
+}
