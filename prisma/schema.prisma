@@ -15,7 +15,7 @@ model Bookmark {
   id            Int      @id @default(autoincrement())
   word          String   @db.VarChar(255)
   createdAt     DateTime @default(now()) @db.Timestamp(6)
-  createdBy     Int
+  createdBy     Int       
   description   String    @db.LongText
   exmaples      SentenceExample[]
   User   User @relation(fields: [createdBy], references: [id] )
@@ -30,7 +30,8 @@ model SentenceExample {
 
 model User {
   id      Int      @id @default(autoincrement())
-  name    String?  @db.VarChar(255)
+  name    String  @db.VarChar(255)
   email     String   @unique @db.VarChar(255)
+  createdAt     DateTime @default(now()) @db.Timestamp(6)
   Bookmark   Bookmark[]
 }
