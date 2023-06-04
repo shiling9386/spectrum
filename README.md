@@ -1,5 +1,12 @@
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
+## TODO
+
+1. Bookmark Type, for example, Word, Idiom, Slang, Acronym, Jargon, Proverb, Terminology, Bookmark Card reflects its type visually
+2. Example Sentences should include createdBy, updatedBy
+3. Add Links property to Bookmark (Abbreviation on URLs, aka short link)
+4. A place to write "What I learned today", integrated with TODOs in Calendar
+
 ## Getting Started
 
 First, run the development server:

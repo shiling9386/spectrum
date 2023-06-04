@@ -31,10 +31,9 @@ const VocabularyPage = () => {
   return (
     <div className={styles.main}>
       <Link href={"/"}>
-        <span>&crarr;</span> Back
+        <span>&crarr;</span> Back to Home
       </Link>
       <br />
-      My Vocabulary
       <ToastContainer />
       <Divider />
       <VocabForm />

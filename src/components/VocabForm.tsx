@@ -1,9 +1,12 @@
 // import { prisma } from "@/db";
 import { BookmarkPayload } from "@/model";
+import { Button, Input, Segmented } from "antd";
 import axios from "axios";
 import { useCallback, useState } from "react";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+
+const { TextArea } = Input;
 
 export const VocabForm = () => {
   const [newWord, setNewWord] = useState("");
@@ -40,19 +43,29 @@ export const VocabForm = () => {
 
   return (
     <div>
-      <input placeholder="Word" value={newWord} onChange={(e) => setNewWord(e.target.value)} />
+      <Segmented size="small" options={["Daily", "Weekly", "Monthly", "Quarterly", "Yearly"]} />
       <br />
       <br />
-      <textarea
-        placeholder="Description"
-        value={description}
-        rows={4}
-        onChange={(e) => setDescription(e.target.value)}
+      <Input
+        placeholder="Bookmark"
+        value={newWord}
+        allowClear
+        onChange={(x) => setNewWord(x.target.value)}
       />
       <br />
-      <button disabled={newWord === ""} onClick={handleSave}>
+      <br />
+      <TextArea
+        showCount
+        maxLength={1000}
+        style={{ height: 120, resize: "none" }}
+        onChange={(e) => setDescription(e.target.value)}
+        placeholder="Description"
+      />
+      <br />
+      <br />
+      <Button disabled={newWord === ""} onClick={handleSave}>
         Save
-      </button>
+      </Button>
     </div>
   );
 };
