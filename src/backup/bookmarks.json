@@ -1,0 +1,58 @@
+[
+  {
+    "id": 11,
+    "word": "slice and dice",
+    "createdAt": "2023-05-30T01:40:17.545Z",
+    "createdBy": 1,
+    "description": "Divide (something) into smaller pieces in order to analyse it more closely or in different ways"
+  },
+  {
+    "id": 12,
+    "word": "malicious",
+    "createdAt": "2023-05-30T01:42:06.163Z",
+    "createdBy": 1,
+    "description": "Characterised by malice, intending or intended to do harm"
+  },
+  {
+    "id": 13,
+    "word": "leeway",
+    "createdAt": "2023-06-01T06:39:15.143Z",
+    "createdBy": 1,
+    "description": "the amount of freedom to move or act that is available.\n"
+  },
+  {
+    "id": 14,
+    "word": "Wrecking",
+    "createdAt": "2023-05-28T05:34:25.705Z",
+    "createdBy": 1,
+    "description": "It is an absolute environmental disaster that China is wrecking on the world"
+  },
+  {
+    "id": 15,
+    "word": "inflict",
+    "createdAt": "2023-05-31T02:12:32.268Z",
+    "createdBy": 1,
+    "description": "they inflicted serious injuries on three other men"
+  },
+  {
+    "id": 16,
+    "word": "Catastrophic",
+    "createdAt": "2023-06-01T00:25:27.106Z",
+    "createdBy": 1,
+    "description": "catastrophic management of the economy "
+  },
+  {
+    "id": 17,
+    "word": "abbreviate",
+    "createdAt": "2023-06-03T13:55:43.505Z",
+    "createdBy": 1,
+    "description": "You can use a comma separated string to pass multiple operations or use \"all\" to abbreviate all operations"
+  },
+  {
+    "id": 18,
+    "word": "tempered",
+    "createdAt": "2023-06-04T15:04:55.830Z",
+    "createdBy": 1,
+    "description": "Act as neutralising or counterbalancing force to (something)"
+  }
+]
