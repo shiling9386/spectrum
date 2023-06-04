@@ -1,17 +1,16 @@
 "use client";
 import styles from "./page.module.scss";
-import { ToastContainer, toast } from "react-toastify";
+import { ToastContainer } from "react-toastify";
 import Link from "next/link";
 import { VocabForm } from "@/components/VocabForm";
-import { vocabDic } from "@/fb_data/vocab";
-import { BookmarkPayload } from "@/model";
 import { useDataService } from "../service/useDataService";
 import { useCallback, useEffect, useState } from "react";
 import { Bookmark } from "@prisma/client";
+import { Button, Card, Col, Divider, Row } from "antd";
 
 const VocabularyPage = () => {
   const [bookmarks, setBookmarks] = useState<Bookmark[]>([]);
-  const { addBookmarks, getAllBookmarks, deleteBookmark } = useDataService();
+  const { getAllBookmarks, deleteBookmark } = useDataService();
 
   const fetchAndSetAllBookmarks = useCallback(() => {
     getAllBookmarks().then((x) => {
@@ -23,24 +22,6 @@ const VocabularyPage = () => {
     fetchAndSetAllBookmarks();
   }, [fetchAndSetAllBookmarks]);
 
-  const syncDataFromFirebaseToPlanetScale = () => {
-    const bookmarkPayloadList: BookmarkPayload[] = [];
-    for (let entry of Object.entries(vocabDic.vocab)) {
-      const data = entry[1];
-      bookmarkPayloadList.push({
-        word: data.word,
-        description: data.description,
-        createdBy: 1,
-        createdAt: new Date(data.createdAt),
-      });
-    }
-    addBookmarks(bookmarkPayloadList).then(() => {
-      toast("Yo", {
-        type: "success",
-      });
-    });
-  };
-
   const handleDelete = useCallback(
     (bookmarkId: number) => {
       deleteBookmark(bookmarkId).then(fetchAndSetAllBookmarks);
@@ -49,22 +30,32 @@ const VocabularyPage = () => {
   );
   return (
     <div className={styles.main}>
-      <ul>
-        {bookmarks.map((b) => (
-          <li key={b.id}>
-            {b.word}
-            <span onClick={() => handleDelete(b.id)}>Delete</span>
-          </li>
-        ))}
-      </ul>
       <Link href={"/"}>
         <span>&crarr;</span> Back
       </Link>
       <br />
       My Vocabulary
       <ToastContainer />
+      <Divider />
       <VocabForm />
-      <button onClick={syncDataFromFirebaseToPlanetScale}>Sync data</button>
+      <Divider />
+      <Row gutter={[16, 16]}>
+        {bookmarks.map((bookmark) => (
+          <Col key={bookmark.id}>
+            <Card
+              title={bookmark.word}
+              extra={
+                <Button type="text" danger onClick={() => handleDelete(bookmark.id)}>
+                  Delete
+                </Button>
+              }
+              style={{ width: 300 }}
+            >
+              <p>{bookmark.description}</p>
+            </Card>
+          </Col>
+        ))}
+      </Row>
     </div>
   );
 };
