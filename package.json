@@ -7,6 +7,7 @@
     "build": "prisma generate & next build",
     "start": "next start",
     "lint": "next lint",
+    "prisma": "npx prisma generate",
     "db_push": "npx prisma db push",
     "db_push_preview": "npx prisma db push --preview-feature"
   },

@@ -19,9 +19,19 @@ export const GET = () =>
 
 export const POST = async (request: Request) => {
   const payload: BookmarkPayload = await request.json();
+  const { word, description, createdBy, usageExamples } = payload;
   return prisma.bookmark
     .create({
-      data: payload,
+      data: {
+        word,
+        description,
+        createdBy,
+        usageExamples: usageExamples && {
+          create: usageExamples.map((example) => ({
+            sentence: example,
+          })),
+        },
+      },
     })
     .then((bookmarks) => NextResponse.json(bookmarks))
     .catch((error) => {

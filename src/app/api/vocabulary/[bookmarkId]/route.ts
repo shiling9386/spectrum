@@ -25,19 +25,19 @@ export const GET = async (_request: Request, { params: { bookmarkId } }: Params)
 };
 
 export const DELETE = async (_request: Request, { params: { bookmarkId } }: Params) => {
-  return prisma.bookmark
-    .deleteMany({
+  const deleteAllUsageExamplesByBookmarkId = (bookmarkId: string) =>
+    prisma.usageExample.deleteMany({
+      where: {
+        bookmarkId: Number(bookmarkId),
+      },
+    });
+  const deleteUser = (bookmarkId: string) =>
+    prisma.bookmark.delete({
       where: {
         id: Number(bookmarkId),
       },
-    })
-    .then((bookmarks) => NextResponse.json(bookmarks))
-    .catch((error) => {
-      return NextResponse.json(
-        {
-          error,
-        },
-        { status: 500 }
-      );
     });
+  return await prisma
+    .$transaction([deleteUser(bookmarkId), deleteAllUsageExamplesByBookmarkId(bookmarkId)])
+    .then((x) => NextResponse.json(x));
 };
