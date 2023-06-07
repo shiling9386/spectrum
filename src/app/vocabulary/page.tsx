@@ -2,11 +2,11 @@
 import styles from "./page.module.scss";
 import { ToastContainer } from "react-toastify";
 import Link from "next/link";
-import { VocabForm } from "@/components/VocabForm";
 import { useDataService } from "../service/useDataService";
 import { useCallback, useEffect, useState } from "react";
 import { Bookmark } from "@prisma/client";
 import { Button, Card, Col, Divider, Row } from "antd";
+import { BookmarkForm } from "@/components/BookmarkForm";
 
 const VocabularyPage = () => {
   const [bookmarks, setBookmarks] = useState<Bookmark[]>([]);
@@ -36,7 +36,7 @@ const VocabularyPage = () => {
       <br />
       <ToastContainer />
       <Divider />
-      <VocabForm />
+      <BookmarkForm />
       <Divider />
       <Row gutter={[16, 16]}>
         {bookmarks.map((bookmark) => (

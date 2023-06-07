@@ -23,7 +23,7 @@ export const VocabForm = () => {
       word: newWord,
       description: description,
       createdBy: 1,
-      //   createdAt: new Date(1685410817545),
+      type: "WORD",
     };
     axios
       .post("/api/vocabulary", payload)
