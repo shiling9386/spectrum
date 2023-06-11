@@ -1,6 +1,5 @@
 "use client";
 import styles from "./page.module.scss";
-import { ToastContainer } from "react-toastify";
 import Link from "next/link";
 import { useDataService } from "../service/useDataService";
 import { useCallback, useEffect, useState } from "react";
@@ -34,7 +33,6 @@ const VocabularyPage = () => {
         <span>&crarr;</span> Back to Home
       </Link>
       <br />
-      <ToastContainer />
       <Divider />
       <BookmarkForm />
       <Divider />

@@ -7,6 +7,8 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 3. Add Links property to Bookmark (Abbreviation on URLs, aka short link)
 4. A place to write "What I learned today", integrated with TODOs in Calendar
 5. Sanitise usage examples
+6. Auto populate description and usage examples upon bookmark input
+7. Generate image based on the description
 
 ## Getting Started
 
