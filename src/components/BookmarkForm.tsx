@@ -2,8 +2,10 @@ import { useDataService } from "@/app/service/useDataService";
 import { BookmarkPayload } from "@/model";
 import { BookmarkType } from "@prisma/client";
 import { Button, Form, Input, Radio, notification } from "antd";
+import { useState } from "react";
 
 export const BookmarkForm = () => {
+  const [loading, setLoading] = useState(false);
   const { addBookmark } = useDataService();
   const [api, contextHolder] = notification.useNotification();
 
@@ -12,6 +14,7 @@ export const BookmarkForm = () => {
       ...values,
       createdBy: 1,
     };
+    setLoading(true);
     addBookmark(payload)
       .then(() =>
         api.success({
@@ -24,6 +27,9 @@ export const BookmarkForm = () => {
           message: "Oops! something went wrong",
           placement: "top",
         });
+      })
+      .finally(() => {
+        setLoading(false);
       });
   };
   return (
@@ -88,7 +94,7 @@ export const BookmarkForm = () => {
         </Form.List>
 
         <Form.Item wrapperCol={{ offset: 8, span: 16 }}>
-          <Button type="primary" htmlType="submit">
+          <Button type="primary" htmlType="submit" loading={loading}>
             Submit
           </Button>
         </Form.Item>

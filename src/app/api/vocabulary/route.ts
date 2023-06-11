@@ -6,7 +6,11 @@ import { NextResponse } from "next/server";
 
 export const GET = () =>
   prisma.bookmark
-    .findMany()
+    .findMany({
+      include: {
+        usageExamples: true,
+      },
+    })
     .then((bookmarks) => NextResponse.json(bookmarks))
     .catch((error) => {
       return NextResponse.json(

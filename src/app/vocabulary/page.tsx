@@ -1,14 +1,13 @@
 "use client";
 import styles from "./page.module.scss";
 import Link from "next/link";
-import { useDataService } from "../service/useDataService";
+import { BookmarkSelect, useDataService } from "../service/useDataService";
 import { useCallback, useEffect, useState } from "react";
-import { Bookmark } from "@prisma/client";
-import { Button, Card, Col, Divider, Row } from "antd";
+import { Button, Card, Col, Divider, List, Row, Typography } from "antd";
 import { BookmarkForm } from "@/components/BookmarkForm";
 
 const VocabularyPage = () => {
-  const [bookmarks, setBookmarks] = useState<Bookmark[]>([]);
+  const [bookmarks, setBookmarks] = useState<BookmarkSelect[]>([]);
   const { getAllBookmarks, deleteBookmark } = useDataService();
 
   const fetchAndSetAllBookmarks = useCallback(() => {
@@ -49,6 +48,18 @@ const VocabularyPage = () => {
               style={{ width: 300 }}
             >
               <p>{bookmark.description}</p>
+              {bookmark.usageExamples.length > 0 && (
+                <List
+                  dataSource={bookmark.usageExamples}
+                  renderItem={(item) => (
+                    <List.Item>
+                      <Typography.Text type="secondary" italic>
+                        {item.sentence}
+                      </Typography.Text>
+                    </List.Item>
+                  )}
+                />
+              )}
             </Card>
           </Col>
         ))}

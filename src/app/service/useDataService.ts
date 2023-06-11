@@ -1,15 +1,18 @@
 import { useCallback } from "react";
 import axios, { AxiosResponse } from "axios";
 import { BookmarkPayload } from "@/model";
-import { Bookmark } from "@prisma/client";
+import { Bookmark, UsageExample } from "@prisma/client";
 
 const getURL = (bookmarkId?: number) => {
   const baseURL = "/api/vocabulary";
   return bookmarkId ? baseURL + "/" + bookmarkId : baseURL;
 };
+export type BookmarkSelect = Bookmark & {
+  usageExamples: UsageExample[];
+};
 export const useDataService = () => {
   const getAllBookmarks = useCallback(() => {
-    return axios.get<any, AxiosResponse<Bookmark[]>>(getURL());
+    return axios.get<any, AxiosResponse<BookmarkSelect[]>>(getURL());
   }, []);
 
   const addBookmark = useCallback((bookmarkPayload: BookmarkPayload) => {
