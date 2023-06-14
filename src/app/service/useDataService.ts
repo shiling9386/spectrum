@@ -7,9 +7,15 @@ const getURL = (bookmarkId?: number) => {
   const baseURL = "/api/vocabulary";
   return bookmarkId ? baseURL + "/" + bookmarkId : baseURL;
 };
-export type BookmarkSelect = Bookmark & {
+// export type BookmarkSelect = Bookmark & {
+//   usageExamples: UsageExample[];
+// };
+
+export interface BookmarkSelect extends Omit<Bookmark, "createdAt" | "updatedAt"> {
   usageExamples: UsageExample[];
-};
+  createdAt: string;
+  updatedAt: string;
+}
 export const useDataService = () => {
   const getAllBookmarks = useCallback(() => {
     return axios.get<any, AxiosResponse<BookmarkSelect[]>>(getURL());

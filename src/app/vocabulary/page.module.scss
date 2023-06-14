@@ -2,3 +2,9 @@
   padding: 2rem 6rem;
   min-height: 100vh;
 }
+
+.cardFooter {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+}

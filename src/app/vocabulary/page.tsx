@@ -3,8 +3,9 @@ import styles from "./page.module.scss";
 import Link from "next/link";
 import { BookmarkSelect, useDataService } from "../service/useDataService";
 import { useCallback, useEffect, useState } from "react";
-import { Button, Card, Col, Divider, List, Row, Typography } from "antd";
+import { Button, Card, Col, Divider, List, Row, Tag, Typography } from "antd";
 import { BookmarkForm } from "@/components/BookmarkForm";
+import { DateTime } from "luxon";
 
 const VocabularyPage = () => {
   const [bookmarks, setBookmarks] = useState<BookmarkSelect[]>([]);
@@ -12,7 +13,11 @@ const VocabularyPage = () => {
 
   const fetchAndSetAllBookmarks = useCallback(() => {
     getAllBookmarks().then((x) => {
-      setBookmarks(x.data);
+      setBookmarks(
+        x.data.sort((a, b) =>
+          DateTime.fromISO(a.createdAt) < DateTime.fromISO(b.createdAt) ? 1 : -1
+        )
+      );
     });
   }, [getAllBookmarks]);
 
@@ -60,6 +65,11 @@ const VocabularyPage = () => {
                   )}
                 />
               )}
+              <Divider />
+              <div className={styles.cardFooter}>
+                <Tag color="#f50">{DateTime.fromISO(bookmark.createdAt).toFormat("dd LLL")}</Tag>
+                <Tag color="cyan">{bookmark.type}</Tag>
+              </div>
             </Card>
           </Col>
         ))}
