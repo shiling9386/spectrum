@@ -38,9 +38,10 @@ export const BookmarkForm = () => {
       <Form name="basic" style={{ maxWidth: 600 }} onFinish={handleSubmit}>
         <Form.Item label="Type" name="type" rules={[{ required: true }]}>
           <Radio.Group>
-            <Radio.Button value={BookmarkType.WORD}>WORD</Radio.Button>
-            <Radio.Button value={BookmarkType.TERMINOLOGY}>TERMINOLOGY</Radio.Button>
-            <Radio.Button value={BookmarkType.PROVERB}>PROVERB</Radio.Button>
+            <Radio.Button value={BookmarkType.WORD}>Word</Radio.Button>
+            <Radio.Button value={BookmarkType.TERMINOLOGY}>Terminology</Radio.Button>
+            <Radio.Button value={BookmarkType.PROVERB}>Proverb</Radio.Button>
+            <Radio.Button value={BookmarkType.SLANG}>Slang</Radio.Button>
           </Radio.Group>
         </Form.Item>
         <Form.Item

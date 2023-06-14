@@ -2,57 +2,245 @@
   {
     "id": 11,
     "word": "slice and dice",
+    "type": "WORD",
     "createdAt": "2023-05-30T01:40:17.545Z",
+    "updatedAt": "2023-06-06T09:17:38.884Z",
     "createdBy": 1,
-    "description": "Divide (something) into smaller pieces in order to analyse it more closely or in different ways"
+    "description": "Divide (something) into smaller pieces in order to analyse it more closely or in different ways",
+    "usageExamples": []
   },
   {
     "id": 12,
     "word": "malicious",
+    "type": "WORD",
     "createdAt": "2023-05-30T01:42:06.163Z",
+    "updatedAt": "2023-06-06T09:17:38.884Z",
     "createdBy": 1,
-    "description": "Characterised by malice, intending or intended to do harm"
+    "description": "Characterised by malice, intending or intended to do harm",
+    "usageExamples": []
   },
   {
     "id": 13,
     "word": "leeway",
+    "type": "WORD",
     "createdAt": "2023-06-01T06:39:15.143Z",
+    "updatedAt": "2023-06-06T09:17:38.884Z",
     "createdBy": 1,
-    "description": "the amount of freedom to move or act that is available.\n"
+    "description": "the amount of freedom to move or act that is available.\n",
+    "usageExamples": []
   },
   {
     "id": 14,
     "word": "Wrecking",
+    "type": "WORD",
     "createdAt": "2023-05-28T05:34:25.705Z",
+    "updatedAt": "2023-06-06T09:17:38.884Z",
     "createdBy": 1,
-    "description": "It is an absolute environmental disaster that China is wrecking on the world"
+    "description": "It is an absolute environmental disaster that China is wrecking on the world",
+    "usageExamples": []
   },
   {
     "id": 15,
     "word": "inflict",
+    "type": "WORD",
     "createdAt": "2023-05-31T02:12:32.268Z",
+    "updatedAt": "2023-06-06T09:17:38.884Z",
     "createdBy": 1,
-    "description": "they inflicted serious injuries on three other men"
+    "description": "they inflicted serious injuries on three other men",
+    "usageExamples": []
   },
   {
     "id": 16,
     "word": "Catastrophic",
+    "type": "WORD",
     "createdAt": "2023-06-01T00:25:27.106Z",
+    "updatedAt": "2023-06-06T09:17:38.884Z",
     "createdBy": 1,
-    "description": "catastrophic management of the economy "
+    "description": "catastrophic management of the economy ",
+    "usageExamples": []
   },
   {
     "id": 17,
     "word": "abbreviate",
+    "type": "WORD",
     "createdAt": "2023-06-03T13:55:43.505Z",
+    "updatedAt": "2023-06-06T09:17:38.884Z",
     "createdBy": 1,
-    "description": "You can use a comma separated string to pass multiple operations or use \"all\" to abbreviate all operations"
+    "description": "You can use a comma separated string to pass multiple operations or use \"all\" to abbreviate all operations",
+    "usageExamples": []
   },
   {
     "id": 18,
     "word": "tempered",
+    "type": "WORD",
     "createdAt": "2023-06-04T15:04:55.830Z",
+    "updatedAt": "2023-06-06T09:17:38.884Z",
     "createdBy": 1,
-    "description": "Act as neutralising or counterbalancing force to (something)"
+    "description": "Act as neutralising or counterbalancing force to (something)",
+    "usageExamples": []
+  },
+  {
+    "id": 28,
+    "word": "lethal",
+    "type": "WORD",
+    "createdAt": "2023-06-07T02:23:19.806Z",
+    "updatedAt": "2023-06-07T02:23:19.806Z",
+    "createdBy": 1,
+    "description": "sufficient to cause death. (very harmful or destructive)",
+    "usageExamples": [
+      {
+        "id": 7,
+        "bookmarkId": 28,
+        "sentence": "He died from a lethal mixture of drugs and alcohol",
+        "createdAt": "2023-06-07T02:23:19.806Z",
+        "updatedAt": "2023-06-07T02:23:19.806Z"
+      }
+    ]
+  },
+  {
+    "id": 29,
+    "word": "transpire",
+    "type": "WORD",
+    "createdAt": "2023-06-09T03:57:07.107Z",
+    "updatedAt": "2023-06-09T03:57:07.107Z",
+    "createdBy": 1,
+    "description": "(of a secret or something unknown) come to be known; be revealed",
+    "usageExamples": [
+      {
+        "id": 8,
+        "bookmarkId": 29,
+        "sentence": "it transpired that millions of dollars of debt had been hidden in a complex web of transactions",
+        "createdAt": "2023-06-09T03:57:07.107Z",
+        "updatedAt": "2023-06-09T03:57:07.107Z"
+      }
+    ]
+  },
+  {
+    "id": 30,
+    "word": "frail",
+    "type": "WORD",
+    "createdAt": "2023-06-09T04:07:30.155Z",
+    "updatedAt": "2023-06-09T04:07:30.155Z",
+    "createdBy": 1,
+    "description": "weak and delicate; easily damaged or broken",
+    "usageExamples": [
+      {
+        "id": 9,
+        "bookmarkId": 30,
+        "sentence": "During the day the bus takes vulnerable and frail people on shopping trips and outings",
+        "createdAt": "2023-06-09T04:07:30.155Z",
+        "updatedAt": "2023-06-09T04:07:30.155Z"
+      },
+      {
+        "id": 10,
+        "bookmarkId": 30,
+        "sentence": "It can cause infections, especially among elderly or frail people",
+        "createdAt": "2023-06-09T04:07:30.155Z",
+        "updatedAt": "2023-06-09T04:07:30.155Z"
+      }
+    ]
+  },
+  {
+    "id": 31,
+    "word": "crack",
+    "type": "WORD",
+    "createdAt": "2023-06-10T06:52:36.077Z",
+    "updatedAt": "2023-06-10T06:52:36.077Z",
+    "createdBy": 1,
+    "description": "a line on the surface of something along which it has split without breaking apart.",
+    "usageExamples": [
+      {
+        "id": 11,
+        "bookmarkId": 31,
+        "sentence": "there was a small crack in the wrist bone",
+        "createdAt": "2023-06-10T06:52:36.077Z",
+        "updatedAt": "2023-06-10T06:52:36.077Z"
+      }
+    ]
+  },
+  {
+    "id": 32,
+    "word": "DOM(Document Object Model)",
+    "type": "WORD",
+    "createdAt": "2023-06-11T01:58:04.304Z",
+    "updatedAt": "2023-06-11T01:58:04.304Z",
+    "createdBy": 1,
+    "description": "The Document Object Model is a cross platform and language independent interface that treats a HTML or XML as a tree structure wherein each node is an object represents a part of the document. The DOM represents a document with a logical tree.",
+    "usageExamples": []
+  },
+  {
+    "id": 33,
+    "word": "pledge",
+    "type": "WORD",
+    "createdAt": "2023-06-11T13:57:37.135Z",
+    "updatedAt": "2023-06-11T13:57:37.135Z",
+    "createdBy": 1,
+    "description": "formally declare or promise that something is or will be the case; solemnly undertake to do something; undertake formally to give",
+    "usageExamples": [
+      {
+        "id": 12,
+        "bookmarkId": 33,
+        "sentence": "Rings are exchanged by the couple as a pledge of their external love",
+        "createdAt": "2023-06-11T13:57:37.135Z",
+        "updatedAt": "2023-06-11T13:57:37.135Z"
+      },
+      {
+        "id": 13,
+        "bookmarkId": 33,
+        "sentence": "The Prime Minister pledged that there would be no increase in VAT",
+        "createdAt": "2023-06-11T13:57:37.135Z",
+        "updatedAt": "2023-06-11T13:57:37.135Z"
+      }
+    ]
+  },
+  {
+    "id": 35,
+    "word": "poised",
+    "type": "WORD",
+    "createdAt": "2023-06-12T18:38:39.170Z",
+    "updatedAt": "2023-06-12T18:38:39.170Z",
+    "createdBy": 1,
+    "description": "having a composed and self-assured manner; having a graceful and elegant bearing.\nbe ready and prepared to do something.",
+    "usageExamples": [
+      {
+        "id": 14,
+        "bookmarkId": 35,
+        "sentence": "Teachers are poised to resume their attack on government school tests",
+        "createdAt": "2023-06-12T18:38:39.170Z",
+        "updatedAt": "2023-06-12T18:38:39.170Z"
+      },
+      {
+        "id": 15,
+        "bookmarkId": 35,
+        "sentence": "She had learnt from the girls at the salon how to appear perfectly posied",
+        "createdAt": "2023-06-12T18:38:39.170Z",
+        "updatedAt": "2023-06-12T18:38:39.170Z"
+      }
+    ]
+  },
+  {
+    "id": 36,
+    "word": "prone",
+    "type": "WORD",
+    "createdAt": "2023-06-12T19:09:04.344Z",
+    "updatedAt": "2023-06-12T19:09:04.344Z",
+    "createdBy": 1,
+    "description": "likely or liable to suffer from, do or experience something unpleasant or regrettable",
+    "usageExamples": [
+      {
+        "id": 16,
+        "bookmarkId": 36,
+        "sentence": "Field screens are prone to damage by pests and pathogens",
+        "createdAt": "2023-06-12T19:09:04.344Z",
+        "updatedAt": "2023-06-12T19:09:04.344Z"
+      },
+      {
+        "id": 17,
+        "bookmarkId": 36,
+        "sentence": "This area is prone to flooding",
+        "createdAt": "2023-06-12T19:09:04.344Z",
+        "updatedAt": "2023-06-12T19:09:04.344Z"
+      }
+    ]
   }
 ]

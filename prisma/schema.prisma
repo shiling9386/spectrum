@@ -44,4 +44,5 @@ enum BookmarkType {
   WORD
   TERMINOLOGY
   PROVERB
+  SLANG
 }
