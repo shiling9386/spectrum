@@ -23,11 +23,10 @@ export const getCountForLastSevenDays = (bookmarks: BookmarkSelect[]): WeeklyCha
     const bookmarkDate = DateTime.fromISO(bookmark.createdAt).toFormat("dd LLL");
     if (dateIndex.has(bookmarkDate)) {
       const index = dateIndex.get(bookmarkDate);
-      if (index) {
+      if (index !== undefined) {
         result[index].count++;
       }
     }
   }
-  console.log(result);
   return result.reverse();
 };
