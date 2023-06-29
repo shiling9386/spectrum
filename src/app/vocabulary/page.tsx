@@ -3,11 +3,12 @@ import styles from "./page.module.scss";
 import Link from "next/link";
 import { BookmarkSelect, useDataService } from "../service/useDataService";
 import { useCallback, useEffect, useState } from "react";
-import { Button, Card, Col, Divider, List, Row, Tag, Typography } from "antd";
+import { Col, Divider, Row } from "antd";
 import { BookmarkForm } from "@/components/BookmarkForm";
 import { DateTime } from "luxon";
 import { WeeklyChart, WeeklyChartProps } from "@/components/WeeklyChart";
 import { getCountForLastSevenDays } from "./utils";
+import { VocabCard } from "@/components/VocabCard/VocabCard";
 
 const VocabularyPage = () => {
   const [bookmarks, setBookmarks] = useState<BookmarkSelect[]>([]);
@@ -49,34 +50,7 @@ const VocabularyPage = () => {
       <Row gutter={[16, 16]}>
         {bookmarks.map((bookmark) => (
           <Col key={bookmark.id}>
-            <Card
-              title={bookmark.word}
-              extra={
-                <Button type="text" danger onClick={() => handleDelete(bookmark.id)}>
-                  Delete
-                </Button>
-              }
-              style={{ width: 300 }}
-            >
-              <p>{bookmark.description}</p>
-              {bookmark.usageExamples.length > 0 && (
-                <List
-                  dataSource={bookmark.usageExamples}
-                  renderItem={(item) => (
-                    <List.Item>
-                      <Typography.Text type="secondary" italic>
-                        {item.sentence}
-                      </Typography.Text>
-                    </List.Item>
-                  )}
-                />
-              )}
-              <Divider />
-              <div className={styles.cardFooter}>
-                <Tag color="#f50">{DateTime.fromISO(bookmark.createdAt).toFormat("dd LLL")}</Tag>
-                <Tag color="cyan">{bookmark.type}</Tag>
-              </div>
-            </Card>
+            <VocabCard bookmark={bookmark} onDelete={handleDelete} />
           </Col>
         ))}
       </Row>

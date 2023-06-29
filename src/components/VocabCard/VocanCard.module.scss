@@ -1,0 +1,76 @@
+.cardContainer {
+  width: 260px;
+  height: 300px;
+  background-color: white;
+  border-radius: 10px;
+  padding: 0.6rem 1rem;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  transition: all 0.3s ease-in-out;
+  display: flex;
+  flex-direction: column;
+}
+.cardContainer:hover {
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+}
+
+.cardBody {
+  flex-grow: 1;
+  overflow: auto;
+  padding-bottom: 1rem;
+}
+
+.cardFooter {
+  flex-shrink: 0;
+  height: 20px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+ul.usageExample {
+  list-style-type: circle;
+  padding: 0 1rem;
+}
+
+.description {
+  overflow: hidden;
+  height: 70px;
+  font-size: 11px;
+  display: -webkit-box;
+  -webkit-line-clamp: 4; /* number of lines to show */
+  line-clamp: 4;
+  -webkit-box-orient: vertical;
+}
+
+.description:hover {
+  text-decoration: #f56a00 wavy underline;
+}
+.flex {
+  display: flex;
+  align-items: center;
+}
+
+.tag {
+  width: 0.9rem;
+  height: 0.9rem;
+  border-radius: 50%;
+  background-color: #f56a00;
+  color: white;
+  text-transform: uppercase;
+  text-align: center;
+  font-size: 8px;
+  line-height: 0.9rem;
+  margin-right: 6px;
+}
+
+.timeRelative {
+  font-size: 9px;
+  opacity: 0.5;
+  font-style: italic;
+}
+
+.tooltip {
+  text-transform: lowercase;
+  font-size: 10px;
+}
