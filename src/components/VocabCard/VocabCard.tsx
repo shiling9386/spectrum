@@ -1,10 +1,10 @@
 import { BookmarkSelect } from "@/app/service/useDataService";
 import { Divider, Dropdown, Empty, MenuProps, Popconfirm, Tooltip, Typography } from "antd";
 import styles from "./VocanCard.module.scss";
-import { BookmarkType } from "@prisma/client";
 import { DateTime } from "luxon";
 import { MoreOutlined } from "@ant-design/icons";
 import { useCallback } from "react";
+import { BOOKMARK_COLORS } from "@/constants";
 
 interface Props {
   bookmark: BookmarkSelect;
@@ -13,30 +13,34 @@ interface Props {
 }
 
 export const VocabCard = ({ bookmark, onDelete }: Props) => {
-  const getActionItems = useCallback((id: number): MenuProps["items"] => {
-    const handleConfirm = () => {
-      onDelete(id);
-    };
-    return [
-      {
-        key: "edit",
-        label: "Edit",
-      },
-      {
-        key: "delete",
-        danger: true,
-        label: (
-          <Popconfirm
-            title="Delete Bookmark"
-            description="are you sure to delete this bookmark?"
-            onConfirm={handleConfirm}
-          >
-            Delete
-          </Popconfirm>
-        ),
-      },
-    ];
-  }, []);
+  const getActionItems = useCallback(
+    (id: number): MenuProps["items"] => {
+      const handleConfirm = () => {
+        onDelete(id);
+      };
+      return [
+        {
+          key: "edit",
+          label: "Edit",
+        },
+        {
+          key: "delete",
+          danger: true,
+          label: (
+            <Popconfirm
+              title="Delete Bookmark"
+              description="are you sure to delete this bookmark?"
+              onConfirm={handleConfirm}
+            >
+              Delete
+            </Popconfirm>
+          ),
+        },
+      ];
+    },
+    [onDelete]
+  );
+
   return (
     <div className={styles.cardContainer}>
       <div className={styles.cardHeader}>
@@ -90,10 +94,3 @@ export const VocabCard = ({ bookmark, onDelete }: Props) => {
     </div>
   );
 };
-
-const BOOKMARK_COLORS = {
-  WORD: "#2db7f5",
-  TERMINOLOGY: "#108ee9",
-  SLANG: "#87d068",
-  PROVERB: "#f50",
-} satisfies Record<BookmarkType, string>;

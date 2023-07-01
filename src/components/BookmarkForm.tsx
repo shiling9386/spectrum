@@ -1,8 +1,11 @@
 import { useDataService } from "@/app/service/useDataService";
+import { BOOKMARK_COLORS } from "@/constants";
 import { BookmarkPayload } from "@/model";
 import { BookmarkType } from "@prisma/client";
 import { Button, Form, Input, Radio, notification } from "antd";
+import { useForm } from "antd/es/form/Form";
 import { useState } from "react";
+import styles from "./BookmarkForm.module.scss";
 
 interface Props {
   onSuccess?: () => void;
@@ -12,6 +15,7 @@ export const BookmarkForm = (props: Props) => {
   const [loading, setLoading] = useState(false);
   const { addBookmark } = useDataService();
   const [api, contextHolder] = notification.useNotification();
+  const [form] = useForm();
 
   const handleSubmit = (values: any) => {
     const payload: BookmarkPayload = {
@@ -34,14 +38,15 @@ export const BookmarkForm = (props: Props) => {
         });
       })
       .finally(() => {
+        form.resetFields();
         setLoading(false);
       });
   };
   return (
     <>
       {contextHolder}
-      <Form name="basic" style={{ maxWidth: 600 }} onFinish={handleSubmit}>
-        <Form.Item label="Type" name="type" rules={[{ required: true }]}>
+      <Form name="basic" style={{ maxWidth: 600 }} onFinish={handleSubmit} form={form}>
+        <Form.Item name="type" rules={[{ required: true }]}>
           <Radio.Group>
             <Radio.Button value={BookmarkType.WORD}>Word</Radio.Button>
             <Radio.Button value={BookmarkType.TERMINOLOGY}>Terminology</Radio.Button>
@@ -49,16 +54,12 @@ export const BookmarkForm = (props: Props) => {
             <Radio.Button value={BookmarkType.SLANG}>Slang</Radio.Button>
           </Radio.Group>
         </Form.Item>
-        <Form.Item
-          label="Bookmark"
-          name="word"
-          rules={[{ required: true, message: "Please input your bookmark!" }]}
-        >
-          <Input />
+        <Form.Item name="word" rules={[{ required: true, message: "Please input your bookmark!" }]}>
+          <Input placeholder="Bookmark" />
         </Form.Item>
 
-        <Form.Item label="Description" name="description">
-          <Input.TextArea />
+        <Form.Item name="description">
+          <Input.TextArea placeholder="Description" />
         </Form.Item>
 
         <Form.List name="usageExamples">
@@ -78,7 +79,7 @@ export const BookmarkForm = (props: Props) => {
                     ]}
                     noStyle
                   >
-                    <Input placeholder="Usage Example" style={{ width: "60%" }} />
+                    <Input.TextArea placeholder="Usage Example" style={{}} />
                   </Form.Item>
                   <Button onClick={() => remove(field.name)}>Remove</Button>
                 </Form.Item>

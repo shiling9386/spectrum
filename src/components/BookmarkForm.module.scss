@@ -1,0 +1,17 @@
+.tag {
+  width: 0.9rem;
+  height: 0.9rem;
+  border-radius: 50%;
+  background-color: #f56a00;
+  color: white;
+  text-transform: uppercase;
+  text-align: center;
+  font-size: 8px;
+  line-height: 0.9rem;
+  margin-right: 6px;
+}
+
+.flex {
+  display: flex;
+  align-items: center;
+}
