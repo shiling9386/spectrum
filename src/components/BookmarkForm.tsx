@@ -4,7 +4,11 @@ import { BookmarkType } from "@prisma/client";
 import { Button, Form, Input, Radio, notification } from "antd";
 import { useState } from "react";
 
-export const BookmarkForm = () => {
+interface Props {
+  onSuccess?: () => void;
+}
+export const BookmarkForm = (props: Props) => {
+  const { onSuccess } = props;
   const [loading, setLoading] = useState(false);
   const { addBookmark } = useDataService();
   const [api, contextHolder] = notification.useNotification();
@@ -16,12 +20,13 @@ export const BookmarkForm = () => {
     };
     setLoading(true);
     addBookmark(payload)
-      .then(() =>
+      .then(() => {
         api.success({
           message: "Successfully bookmarked!",
           placement: "top",
-        })
-      )
+        });
+        onSuccess && onSuccess();
+      })
       .catch(() => {
         api.error({
           message: "Oops! something went wrong",

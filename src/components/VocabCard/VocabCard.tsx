@@ -1,8 +1,10 @@
 import { BookmarkSelect } from "@/app/service/useDataService";
-import { Divider, Empty, Tooltip, Typography } from "antd";
+import { Divider, Dropdown, Empty, MenuProps, Popconfirm, Tooltip, Typography } from "antd";
 import styles from "./VocanCard.module.scss";
 import { BookmarkType } from "@prisma/client";
 import { DateTime } from "luxon";
+import { MoreOutlined } from "@ant-design/icons";
+import { useCallback } from "react";
 
 interface Props {
   bookmark: BookmarkSelect;
@@ -11,18 +13,52 @@ interface Props {
 }
 
 export const VocabCard = ({ bookmark, onDelete }: Props) => {
+  const getActionItems = useCallback((id: number): MenuProps["items"] => {
+    const handleConfirm = () => {
+      onDelete(id);
+    };
+    return [
+      {
+        key: "edit",
+        label: "Edit",
+      },
+      {
+        key: "delete",
+        danger: true,
+        label: (
+          <Popconfirm
+            title="Delete Bookmark"
+            description="are you sure to delete this bookmark?"
+            onConfirm={handleConfirm}
+          >
+            Delete
+          </Popconfirm>
+        ),
+      },
+    ];
+  }, []);
   return (
     <div className={styles.cardContainer}>
       <div className={styles.cardHeader}>
-        <div className={styles.flex}>
-          <Tooltip title={bookmark.type} overlayClassName={styles.tooltip}>
-            <div className={styles.tag} style={{ backgroundColor: BOOKMARK_COLORS[bookmark.type] }}>
-              {bookmark.type.charAt(0)}
+        <div className={styles.flexBetween}>
+          <div className={styles.flex}>
+            <Tooltip title={bookmark.type} overlayClassName={styles.tooltip}>
+              <div
+                className={styles.tag}
+                style={{ backgroundColor: BOOKMARK_COLORS[bookmark.type] }}
+              >
+                {bookmark.type.charAt(0)}
+              </div>
+            </Tooltip>
+            <Typography.Text strong ellipsis>
+              {bookmark.word}
+            </Typography.Text>
+          </div>
+          <Dropdown menu={{ items: getActionItems(bookmark.id) }} trigger={["click"]}>
+            <div className={styles.actionsBtn}>
+              <MoreOutlined style={{ color: "#108ee9", fontSize: "1.1rem" }} />
             </div>
-          </Tooltip>
-          <Typography.Text strong ellipsis>
-            {bookmark.word}
-          </Typography.Text>
+          </Dropdown>
         </div>
         <Tooltip title={bookmark.description} overlayClassName={styles.tooltip}>
           <Typography.Text italic className={styles.description}>
@@ -57,7 +93,7 @@ export const VocabCard = ({ bookmark, onDelete }: Props) => {
 
 const BOOKMARK_COLORS = {
   WORD: "#2db7f5",
-  TERMINOLOGY: "108ee9",
+  TERMINOLOGY: "#108ee9",
   SLANG: "#87d068",
   PROVERB: "#f50",
 } satisfies Record<BookmarkType, string>;

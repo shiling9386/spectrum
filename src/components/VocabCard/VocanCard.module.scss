@@ -74,3 +74,23 @@ ul.usageExample {
   text-transform: lowercase;
   font-size: 10px;
 }
+
+.flexBetween {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.actionsBtn {
+  width: 1.6rem;
+  height: 1.6rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  border-radius: 50%;
+}
+
+.actionsBtn:hover {
+  background-color: aliceblue;
+}

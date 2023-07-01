@@ -44,7 +44,7 @@ const VocabularyPage = () => {
       </Link>
       <br />
       <Divider />
-      <BookmarkForm />
+      <BookmarkForm onSuccess={fetchAndSetAllBookmarks} />
       <Divider />
       <WeeklyChart data={weeklyChartData} />
       <Row gutter={[16, 16]}>
