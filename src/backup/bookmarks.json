@@ -242,5 +242,252 @@
         "updatedAt": "2023-06-12T19:09:04.344Z"
       }
     ]
+  },
+  {
+    "id": 37,
+    "word": "off the charts",
+    "type": "WORD",
+    "createdAt": "2023-06-14T17:04:15.949Z",
+    "updatedAt": "2023-06-14T17:04:15.949Z",
+    "createdBy": 1,
+    "description": "has reached an extreme or unexpected level; outside of the normal range of measurement, beyond expectations",
+    "usageExamples": [
+      {
+        "id": 18,
+        "bookmarkId": 37,
+        "sentence": "As a political candidate, he is absolutely off the charts",
+        "createdAt": "2023-06-14T17:04:15.949Z",
+        "updatedAt": "2023-06-14T17:04:15.949Z"
+      }
+    ]
+  },
+  {
+    "id": 38,
+    "word": "looming",
+    "type": "WORD",
+    "createdAt": "2023-06-14T17:59:16.704Z",
+    "updatedAt": "2023-06-14T17:59:16.704Z",
+    "createdBy": 1,
+    "description": "appear as a vague or shadowy form, especially one that is large or threatening",
+    "usageExamples": [
+      {
+        "id": 19,
+        "bookmarkId": 38,
+        "sentence": "The government has not woken up to the looming crisis",
+        "createdAt": "2023-06-14T17:59:16.704Z",
+        "updatedAt": "2023-06-14T17:59:16.704Z"
+      },
+      {
+        "id": 20,
+        "bookmarkId": 38,
+        "sentence": "There is a housing crisis looming and we are just about in it",
+        "createdAt": "2023-06-14T17:59:16.704Z",
+        "updatedAt": "2023-06-14T17:59:16.704Z"
+      }
+    ]
+  },
+  {
+    "id": 39,
+    "word": "steamroller",
+    "type": "WORD",
+    "createdAt": "2023-06-14T18:50:41.666Z",
+    "updatedAt": "2023-06-14T18:50:41.666Z",
+    "createdBy": 1,
+    "description": "(of a government or other authority) forcibly pass (a measure) by restricting debate or otherwise overriding oppositions ",
+    "usageExamples": [
+      {
+        "id": 21,
+        "bookmarkId": 39,
+        "sentence": "An attempt to steamroller the country into a political reform",
+        "createdAt": "2023-06-14T18:50:41.666Z",
+        "updatedAt": "2023-06-14T18:50:41.666Z"
+      },
+      {
+        "id": 22,
+        "bookmarkId": 39,
+        "sentence": "The government is trying to steamroller a law through",
+        "createdAt": "2023-06-14T18:50:41.666Z",
+        "updatedAt": "2023-06-14T18:50:41.666Z"
+      }
+    ]
+  },
+  {
+    "id": 40,
+    "word": "lease",
+    "type": "WORD",
+    "createdAt": "2023-06-17T15:46:00.358Z",
+    "updatedAt": "2023-06-17T15:46:00.358Z",
+    "createdBy": 1,
+    "description": "A contract by which one party conveys land property or service to another for a specific time, usually in return for a periodic payment ",
+    "usageExamples": [
+      {
+        "id": 23,
+        "bookmarkId": 40,
+        "sentence": "Either way those who currently lease these garages will lose their coveted parking spaces",
+        "createdAt": "2023-06-17T15:46:00.358Z",
+        "updatedAt": "2023-06-17T15:46:00.358Z"
+      },
+      {
+        "id": 24,
+        "bookmarkId": 40,
+        "sentence": "Most try to lease or rent their fleets to cut risk and expense ",
+        "createdAt": "2023-06-17T15:46:00.358Z",
+        "updatedAt": "2023-06-17T15:46:00.358Z"
+      }
+    ]
+  },
+  {
+    "id": 41,
+    "word": "expedition",
+    "type": "WORD",
+    "createdAt": "2023-06-21T17:42:26.765Z",
+    "updatedAt": "2023-06-21T17:42:26.765Z",
+    "createdBy": 1,
+    "description": "A journey undertaken by a group of people with a particular purpose, especially that of exploration, research or war  ",
+    "usageExamples": [
+      {
+        "id": 25,
+        "bookmarkId": 41,
+        "sentence": "They went on an expedition to the South Pole",
+        "createdAt": "2023-06-21T17:42:26.765Z",
+        "updatedAt": "2023-06-21T17:42:26.765Z"
+      }
+    ]
+  },
+  {
+    "id": 43,
+    "word": "needle in a haystack",
+    "type": "PROVERB",
+    "createdAt": "2023-06-22T08:58:23.422Z",
+    "updatedAt": "2023-06-22T08:58:23.422Z",
+    "createdBy": 1,
+    "description": "Something that is almost impossible to find because it is hidden among so many other things",
+    "usageExamples": [
+      {
+        "id": 27,
+        "bookmarkId": 43,
+        "sentence": "Searching for your earring in the park will be like looking for a needle in a haystack",
+        "createdAt": "2023-06-22T08:58:23.422Z",
+        "updatedAt": "2023-06-22T08:58:23.422Z"
+      }
+    ]
+  },
+  {
+    "id": 44,
+    "word": "penny-pinching",
+    "type": "SLANG",
+    "createdAt": "2023-06-24T15:01:28.815Z",
+    "updatedAt": "2023-06-24T15:01:28.815Z",
+    "createdBy": 1,
+    "description": "unwilling to spend money",
+    "usageExamples": [
+      {
+        "id": 28,
+        "bookmarkId": 44,
+        "sentence": "These airlines have a penny pinching approach to passenger comfort",
+        "createdAt": "2023-06-24T15:01:28.815Z",
+        "updatedAt": "2023-06-24T15:01:28.815Z"
+      },
+      {
+        "id": 29,
+        "bookmarkId": 44,
+        "sentence": "Germany's stunning new World Cup stadiums will put Britain's penny pinching to shame",
+        "createdAt": "2023-06-24T15:01:28.815Z",
+        "updatedAt": "2023-06-24T15:01:28.815Z"
+      }
+    ]
+  },
+  {
+    "id": 45,
+    "word": "culprit",
+    "type": "WORD",
+    "createdAt": "2023-06-28T15:45:32.894Z",
+    "updatedAt": "2023-06-28T15:45:32.894Z",
+    "createdBy": 1,
+    "description": "A personal who is responsible for a crime or other misdeed",
+    "usageExamples": [
+      {
+        "id": 30,
+        "bookmarkId": 45,
+        "sentence": "Low level ozone pollution is the real culprit",
+        "createdAt": "2023-06-28T15:45:32.894Z",
+        "updatedAt": "2023-06-28T15:45:32.894Z"
+      },
+      {
+        "id": 31,
+        "bookmarkId": 45,
+        "sentence": "The car's front nearside door had been smashed in but the culprits had fled",
+        "createdAt": "2023-06-28T15:45:32.894Z",
+        "updatedAt": "2023-06-28T15:45:32.894Z"
+      }
+    ]
+  },
+  {
+    "id": 46,
+    "word": "plausible deniability",
+    "type": "TERMINOLOGY",
+    "createdAt": "2023-06-28T15:55:53.018Z",
+    "updatedAt": "2023-06-28T15:55:53.018Z",
+    "createdBy": 1,
+    "description": "plausible deniability is the ability of people, typically senior officials in a formal or informal chain of command, to deny knowledge of or responsibility for actions committed by or on behalf of their organisational hierarchy ",
+    "usageExamples": [
+      {
+        "id": 32,
+        "bookmarkId": 46,
+        "sentence": "There is evidence that Wagner was used as a proxy by the Russian government, allowing the Russian state to have plausible deniability for military operations abroad, and allowing it to hide the true casualties of Russia's foreign interventions",
+        "createdAt": "2023-06-28T15:55:53.018Z",
+        "updatedAt": "2023-06-28T15:55:53.018Z"
+      }
+    ]
+  },
+  {
+    "id": 47,
+    "word": "arbitrary",
+    "type": "WORD",
+    "createdAt": "2023-06-30T16:17:34.817Z",
+    "updatedAt": "2023-06-30T16:17:34.817Z",
+    "createdBy": 1,
+    "description": "based on random choice or personal whim, rather than any reason or system",
+    "usageExamples": [
+      {
+        "id": 33,
+        "bookmarkId": 47,
+        "sentence": "Our choice was purely arbitrary",
+        "createdAt": "2023-06-30T16:17:34.817Z",
+        "updatedAt": "2023-06-30T16:17:34.817Z"
+      },
+      {
+        "id": 34,
+        "bookmarkId": 47,
+        "sentence": "That was the system - arbitrary, incomprehensible, illogical - and fairness had nothing to do with it",
+        "createdAt": "2023-06-30T16:17:34.817Z",
+        "updatedAt": "2023-06-30T16:17:34.817Z"
+      }
+    ]
+  },
+  {
+    "id": 49,
+    "word": "In the absence of",
+    "type": "WORD",
+    "createdAt": "2023-07-01T11:28:32.298Z",
+    "updatedAt": "2023-07-01T11:28:32.298Z",
+    "createdBy": 1,
+    "description": "while someone or something is not present or does not exist",
+    "usageExamples": [
+      {
+        "id": 37,
+        "bookmarkId": 49,
+        "sentence": "In the absence of proof, the charge cannot be sustained",
+        "createdAt": "2023-07-01T11:28:32.298Z",
+        "updatedAt": "2023-07-01T11:28:32.298Z"
+      },
+      {
+        "id": 38,
+        "bookmarkId": 49,
+        "sentence": "In the absence of more suitable candidates, we decided to offer the job to Mr Conway",
+        "createdAt": "2023-07-01T11:28:32.298Z",
+        "updatedAt": "2023-07-01T11:28:32.298Z"
+      }
+    ]
   }
 ]
