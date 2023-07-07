@@ -1,11 +1,9 @@
 import { useDataService } from "@/app/service/useDataService";
-import { BOOKMARK_COLORS } from "@/constants";
 import { BookmarkPayload } from "@/model";
 import { BookmarkType } from "@prisma/client";
 import { Button, Form, Input, Radio, notification } from "antd";
 import { useForm } from "antd/es/form/Form";
 import { useState } from "react";
-import styles from "./BookmarkForm.module.scss";
 
 interface Props {
   onSuccess?: () => void;

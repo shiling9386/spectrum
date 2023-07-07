@@ -1,0 +1,71 @@
+$default_border: 1px solid rgba(242, 234, 234);
+.container {
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+}
+
+.sidemenu {
+  width: 240px;
+  height: 100%;
+  border-right: $default_border;
+  display: flex;
+  flex-direction: column;
+  transition: all 0.2s ease-in-out;
+}
+
+.sidemenu_collapse {
+  composes: sidemenu;
+  width: 70px;
+}
+
+.brand {
+  height: 24%;
+  border-bottom: $default_border;
+}
+
+.menus {
+  flex-grow: 1;
+  border-bottom: $default_border;
+}
+
+.settings {
+  height: 34%;
+  border-bottom: $default_border;
+}
+
+.footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 38px;
+}
+
+.footer:hover {
+  background-color: lightgray;
+  opacity: 0.1;
+  cursor: pointer;
+}
+
+.main {
+  padding: 2rem;
+}
+
+.menuItem {
+  height: 40px;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  width: 100%;
+  padding-left: 20%;
+  gap: 0.4rem;
+}
+
+.menuItem:hover {
+  background-color: rgba(244, 244, 244, 0.7);
+}
+
+.selected {
+  border-bottom: 2px solid #f56a00;
+}

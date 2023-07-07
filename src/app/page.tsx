@@ -1,23 +1,32 @@
-import styles from "./page.module.css";
+"use client";
+import { useState } from "react";
+import styles from "./page.module.scss";
 import Link from "next/link";
+import { BiSolidBook } from "react-icons/bi";
+import { BsCalendar2Week, BsBook } from "react-icons/bs";
 
-export default async function Home() {
+export default function Home() {
+  const [menuExpanded, setMenuExpanded] = useState(true);
   return (
-    <main className={styles.main}>
-      <div className={styles.center}>
-        <h1>Hi Shi Ling</h1>
-      </div>
-
-      <div className={styles.grid}>
-        <div className={styles.card}>
-          <Link href={"/vocabulary"}>
-            <h2>
-              English Corner<span>-&gt;</span>
-            </h2>
-            <p>A place to review and learn new vocabulary</p>
-          </Link>
+    <div className={styles.container}>
+      <div className={menuExpanded ? styles.sidemenu : styles.sidemenu_collapse}>
+        <div className={styles.brand}></div>
+        <div className={styles.menus}>
+          <div className={styles.menuItem}>
+            <BsBook />
+            <label>My Dictionary</label>
+          </div>
+          <div className={styles.menuItem}>
+            <BsCalendar2Week />
+            <label>Calendar</label>
+          </div>
         </div>
+        <div className={styles.settings}></div>
+        <div className={styles.footer} onClick={() => setMenuExpanded((x) => !x)}></div>
       </div>
-    </main>
+      <div className={styles.main}>
+        <Link href={"/vocabulary"}>My Dictionary</Link>
+      </div>
+    </div>
   );
 }
