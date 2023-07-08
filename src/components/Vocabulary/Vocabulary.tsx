@@ -1,23 +1,18 @@
 import styles from "./Vocabulary.module.scss";
-import Link from "next/link";
 import { BookmarkSelect, useDataService } from "../../service/useDataService";
 import { useCallback, useEffect, useState } from "react";
 import { Col, Divider, Row } from "antd";
 import { BookmarkForm } from "./BookmarkForm/BookmarkForm";
 import { DateTime } from "luxon";
-import { WeeklyChart, WeeklyChartProps } from "./Chart/WeeklyChart";
-import { getCountForLastSevenDays } from "./utils";
 import { VocabCard } from "./VocabCard/VocabCard";
+import { SummaryVisuals } from "./SummaryVisuals";
 
 const VocabularyPage = () => {
   const [bookmarks, setBookmarks] = useState<BookmarkSelect[]>([]);
-  const [weeklyChartData, setWeeklyChartData] = useState<WeeklyChartProps["data"]>([]);
   const { getAllBookmarks, deleteBookmark } = useDataService();
 
   const fetchAndSetAllBookmarks = useCallback(() => {
     getAllBookmarks().then((x) => {
-      const countForLast7Days = getCountForLastSevenDays(x.data);
-      setWeeklyChartData(countForLast7Days);
       setBookmarks(
         x.data.sort((a, b) =>
           DateTime.fromISO(a.createdAt) < DateTime.fromISO(b.createdAt) ? 1 : -1
@@ -40,7 +35,7 @@ const VocabularyPage = () => {
     <div className={styles.main}>
       <BookmarkForm onSuccess={fetchAndSetAllBookmarks} />
       <Divider />
-      <WeeklyChart data={weeklyChartData} />
+      <SummaryVisuals />
       <Row gutter={[16, 16]}>
         {bookmarks.map((bookmark) => (
           <Col key={bookmark.id}>

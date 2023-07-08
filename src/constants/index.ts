@@ -1,8 +1,8 @@
 import { BookmarkType } from "@prisma/client";
 
 export const BOOKMARK_COLORS = {
-  WORD: "#2db7f5",
-  TERMINOLOGY: "#108ee9",
-  SLANG: "#87d068",
-  PROVERB: "#f50",
+  WORD: "#29c2b3",
+  TERMINOLOGY: "#FFE4A7",
+  SLANG: "#FF9EAA",
+  PROVERB: "#F29727",
 } satisfies Record<BookmarkType, string>;
