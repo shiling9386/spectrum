@@ -1,10 +1,8 @@
 "use client";
 import { ReactElement, useState } from "react";
 import styles from "./page.module.scss";
-import Link from "next/link";
-import { BsCalendar2Week, BsBook } from "react-icons/bs";
+import { BsBookHalf, BsCalendar2WeekFill } from "react-icons/bs";
 import classNames from "classnames";
-import { IconBase, IconType } from "react-icons";
 import VocabularyPage from "@/components/Vocabulary/Vocabulary";
 
 type MenuItemType = "Dictionary" | "Calendar";
@@ -15,12 +13,12 @@ interface MenuItem {
 }
 const menuItems: MenuItem[] = [
   {
-    icon: <BsBook />,
+    icon: <BsBookHalf />,
     label: "Dictionary",
     id: "Dictionary",
   },
   {
-    icon: <BsCalendar2Week />,
+    icon: <BsCalendar2WeekFill />,
     label: "Calendar",
     id: "Calendar",
   },

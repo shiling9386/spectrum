@@ -1,4 +1,5 @@
-$default_border: 1px solid rgba(242, 234, 234);
+@import "../constants/common.module.scss";
+
 .container {
   width: 100vw;
   height: 100vh;
@@ -9,12 +10,14 @@ $default_border: 1px solid rgba(242, 234, 234);
 .sidemenu {
   width: 240px;
   height: 100%;
-  border-right: $default_border;
   display: flex;
   flex-direction: column;
   transition: width 0.2s ease-in-out;
   overflow: hidden;
   flex-shrink: 0;
+  background-color: $primary-color;
+  color: $font-color;
+  box-shadow: $default_shadow;
 }
 
 .sidemenu_collapse {
@@ -87,8 +90,7 @@ $default_border: 1px solid rgba(242, 234, 234);
 }
 
 .selected {
-  background-color: #f56a00;
-  color: whitesmoke;
+  background-color: $secondary-color;
 }
 
 .selected:after {
