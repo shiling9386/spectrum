@@ -12,7 +12,9 @@ $default_border: 1px solid rgba(242, 234, 234);
   border-right: $default_border;
   display: flex;
   flex-direction: column;
-  transition: all 0.2s ease-in-out;
+  transition: width 0.2s ease-in-out;
+  overflow: hidden;
+  flex-shrink: 0;
 }
 
 .sidemenu_collapse {
@@ -28,6 +30,7 @@ $default_border: 1px solid rgba(242, 234, 234);
 .menus {
   flex-grow: 1;
   border-bottom: $default_border;
+  padding: 2rem 0;
 }
 
 .settings {
@@ -50,6 +53,8 @@ $default_border: 1px solid rgba(242, 234, 234);
 
 .main {
   padding: 2rem;
+  flex-grow: 1;
+  overflow-y: auto;
 }
 
 .menuItem {
@@ -60,12 +65,32 @@ $default_border: 1px solid rgba(242, 234, 234);
   width: 100%;
   padding-left: 20%;
   gap: 0.4rem;
+  margin-bottom: 0.4rem;
+  border-radius: 4px;
+  transition: all 0.5s;
 }
 
+.menuItem label {
+  cursor: inherit;
+}
+
+.menuItem:after {
+  content: "»";
+  opacity: 0;
+}
 .menuItem:hover {
-  background-color: rgba(244, 244, 244, 0.7);
+  padding-left: 18%;
+}
+
+.menuItem:hover::after {
+  opacity: 0.9;
 }
 
 .selected {
-  border-bottom: 2px solid #f56a00;
+  background-color: #f56a00;
+  color: whitesmoke;
+}
+
+.selected:after {
+  opacity: 0.9;
 }

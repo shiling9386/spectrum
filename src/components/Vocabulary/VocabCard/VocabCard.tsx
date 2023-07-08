@@ -1,4 +1,4 @@
-import { BookmarkSelect } from "@/app/service/useDataService";
+import { BookmarkSelect } from "@/service/useDataService";
 import { Divider, Dropdown, Empty, MenuProps, Popconfirm, Tooltip, Typography } from "antd";
 import styles from "./VocanCard.module.scss";
 import { DateTime } from "luxon";

@@ -1,4 +1,4 @@
-import { useDataService } from "@/app/service/useDataService";
+import { useDataService } from "@/service/useDataService";
 import { BookmarkPayload } from "@/model";
 import { BookmarkType } from "@prisma/client";
 import { Button, Form, Input, Radio, notification } from "antd";

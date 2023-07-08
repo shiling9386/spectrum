@@ -1,14 +1,13 @@
-"use client";
-import styles from "./page.module.scss";
+import styles from "./Vocabulary.module.scss";
 import Link from "next/link";
-import { BookmarkSelect, useDataService } from "../service/useDataService";
+import { BookmarkSelect, useDataService } from "../../service/useDataService";
 import { useCallback, useEffect, useState } from "react";
 import { Col, Divider, Row } from "antd";
-import { BookmarkForm } from "@/components/BookmarkForm";
+import { BookmarkForm } from "./BookmarkForm/BookmarkForm";
 import { DateTime } from "luxon";
-import { WeeklyChart, WeeklyChartProps } from "@/components/WeeklyChart";
+import { WeeklyChart, WeeklyChartProps } from "./Chart/WeeklyChart";
 import { getCountForLastSevenDays } from "./utils";
-import { VocabCard } from "@/components/VocabCard/VocabCard";
+import { VocabCard } from "./VocabCard/VocabCard";
 
 const VocabularyPage = () => {
   const [bookmarks, setBookmarks] = useState<BookmarkSelect[]>([]);
@@ -39,11 +38,6 @@ const VocabularyPage = () => {
   );
   return (
     <div className={styles.main}>
-      <Link href={"/"}>
-        <span>&crarr;</span> Back to Home
-      </Link>
-      <br />
-      <Divider />
       <BookmarkForm onSuccess={fetchAndSetAllBookmarks} />
       <Divider />
       <WeeklyChart data={weeklyChartData} />

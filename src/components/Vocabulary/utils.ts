@@ -1,5 +1,5 @@
-import { WeeklyChartProps } from "@/components/WeeklyChart";
-import { BookmarkSelect } from "../service/useDataService";
+import { WeeklyChartProps } from "@/components/Vocabulary/Chart/WeeklyChart";
+import { BookmarkSelect } from "../../service/useDataService";
 import { DateTime } from "luxon";
 
 export const getCountForLastSevenDays = (bookmarks: BookmarkSelect[]): WeeklyChartProps["data"] => {
