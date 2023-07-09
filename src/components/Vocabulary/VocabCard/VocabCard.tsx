@@ -1,5 +1,5 @@
 import { Divider, Dropdown, Empty, MenuProps, Popconfirm, Tooltip, Typography } from "antd";
-import styles from "./VocanCard.module.scss";
+import styles from "./VocabCard.module.scss";
 import { DateTime } from "luxon";
 import { MoreOutlined } from "@ant-design/icons";
 import { useCallback } from "react";
@@ -76,7 +76,7 @@ export const VocabCard = ({ bookmark, onDelete }: Props) => {
           <ul className={styles.usageExample}>
             {bookmark.usageExamples.map((example) => (
               <li key={example.id}>
-                <Typography.Text type="secondary" style={{ fontSize: 10 }}>
+                <Typography.Text type="secondary" style={{ fontSize: 13 }}>
                   {example.sentence}
                 </Typography.Text>
               </li>

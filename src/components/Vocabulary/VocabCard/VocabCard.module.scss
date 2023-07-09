@@ -1,6 +1,8 @@
+@import "../../../constants/common.module.scss";
+
 .cardContainer {
-  width: 260px;
-  height: 300px;
+  width: 280px;
+  height: 320px;
   background-color: white;
   border-radius: 10px;
   padding: 0.6rem 1rem;
@@ -8,6 +10,7 @@
   transition: all 0.3s ease-in-out;
   display: flex;
   flex-direction: column;
+  color: $font-color;
 }
 .cardContainer:hover {
   box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
@@ -36,7 +39,7 @@ ul.usageExample {
 .description {
   overflow: hidden;
   height: 70px;
-  font-size: 11px;
+  font-size: 14px;
   display: -webkit-box;
   -webkit-line-clamp: 4; /* number of lines to show */
   line-clamp: 4;
@@ -52,27 +55,26 @@ ul.usageExample {
 }
 
 .tag {
-  width: 0.9rem;
-  height: 0.9rem;
+  width: 1rem;
+  height: 1rem;
   border-radius: 50%;
-  background-color: #f56a00;
   color: white;
   text-transform: uppercase;
   text-align: center;
-  font-size: 8px;
-  line-height: 0.9rem;
+  font-size: 10px;
+  line-height: 1rem;
   margin-right: 6px;
 }
 
 .timeRelative {
-  font-size: 9px;
-  opacity: 0.5;
+  font-size: 10px;
+  opacity: 0.7;
   font-style: italic;
 }
 
 .tooltip {
   text-transform: lowercase;
-  font-size: 10px;
+  font-size: 13px;
 }
 
 .flexBetween {
