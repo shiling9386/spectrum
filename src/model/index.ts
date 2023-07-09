@@ -5,3 +5,8 @@ export type BookmarkPayload = Pick<Bookmark, "word" | "description" | "createdBy
   createdAt?: Date;
   usageExamples?: string[];
 };
+export interface BookmarkSelect extends Omit<Bookmark, "createdAt" | "updatedAt"> {
+  usageExamples: UsageExample[];
+  createdAt: string;
+  updatedAt: string;
+}

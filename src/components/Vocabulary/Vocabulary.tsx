@@ -1,48 +1,30 @@
 import styles from "./Vocabulary.module.scss";
-import { BookmarkSelect, useDataService } from "../../service/useDataService";
-import { useCallback, useEffect, useState } from "react";
-import { Col, Divider, Row } from "antd";
+import { Divider } from "antd";
 import { BookmarkForm } from "./BookmarkForm/BookmarkForm";
-import { DateTime } from "luxon";
-import { VocabCard } from "./VocabCard/VocabCard";
 import { SummaryVisuals } from "./SummaryVisuals";
+import { ListView } from "./ListView/ListView";
+import { useRecoilRefresher_UNSTABLE } from "recoil";
+import { bookmarksState } from "@/atoms/bookmark";
+import bookmarkService from "@/service/bookmarkService";
+import { useCallback } from "react";
 
 const VocabularyPage = () => {
-  const [bookmarks, setBookmarks] = useState<BookmarkSelect[]>([]);
-  const { getAllBookmarks, deleteBookmark } = useDataService();
-
-  const fetchAndSetAllBookmarks = useCallback(() => {
-    getAllBookmarks().then((x) => {
-      setBookmarks(
-        x.data.sort((a, b) =>
-          DateTime.fromISO(a.createdAt) < DateTime.fromISO(b.createdAt) ? 1 : -1
-        )
-      );
-    });
-  }, [getAllBookmarks]);
-
-  useEffect(() => {
-    fetchAndSetAllBookmarks();
-  }, [fetchAndSetAllBookmarks]);
+  const refreshData = useRecoilRefresher_UNSTABLE(bookmarksState);
 
   const handleDelete = useCallback(
     (bookmarkId: number) => {
-      deleteBookmark(bookmarkId).then(fetchAndSetAllBookmarks);
+      bookmarkService.deleteBookmark(bookmarkId).then(refreshData);
     },
-    [deleteBookmark, fetchAndSetAllBookmarks]
+    [refreshData]
   );
+
   return (
     <div className={styles.main}>
-      <BookmarkForm onSuccess={fetchAndSetAllBookmarks} />
+      <BookmarkForm onSuccess={refreshData} />
       <Divider />
       <SummaryVisuals />
-      <Row gutter={[16, 16]}>
-        {bookmarks.map((bookmark) => (
-          <Col key={bookmark.id}>
-            <VocabCard bookmark={bookmark} onDelete={handleDelete} />
-          </Col>
-        ))}
-      </Row>
+      <Divider />
+      <ListView onDelete={handleDelete} />
     </div>
   );
 };

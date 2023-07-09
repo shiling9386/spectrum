@@ -1,5 +1,5 @@
-import { useDataService } from "@/service/useDataService";
 import { BookmarkPayload } from "@/model";
+import bookmarkService from "@/service/bookmarkService";
 import { BookmarkType } from "@prisma/client";
 import { Button, Form, Input, Radio, notification } from "antd";
 import { useForm } from "antd/es/form/Form";
@@ -11,7 +11,6 @@ interface Props {
 export const BookmarkForm = (props: Props) => {
   const { onSuccess } = props;
   const [loading, setLoading] = useState(false);
-  const { addBookmark } = useDataService();
   const [api, contextHolder] = notification.useNotification();
   const [form] = useForm();
 
@@ -21,7 +20,8 @@ export const BookmarkForm = (props: Props) => {
       createdBy: 1,
     };
     setLoading(true);
-    addBookmark(payload)
+    bookmarkService
+      .addBookmark(payload)
       .then(() => {
         api.success({
           message: "Successfully bookmarked!",
