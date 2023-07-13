@@ -42,14 +42,17 @@ export const VocabCard = ({ bookmark, onDelete }: Props) => {
   );
 
   return (
-    <div className={styles.cardContainer}>
+    <div
+      className={styles.cardContainer}
+      style={{ backgroundColor: BOOKMARK_COLORS[bookmark.type].bgColor }}
+    >
       <div className={styles.cardHeader}>
         <div className={styles.flexBetween}>
           <div className={styles.flex}>
             <Tooltip title={bookmark.type} overlayClassName={styles.tooltip}>
               <div
                 className={styles.tag}
-                style={{ backgroundColor: BOOKMARK_COLORS[bookmark.type] }}
+                style={{ backgroundColor: BOOKMARK_COLORS[bookmark.type].color }}
               >
                 {bookmark.type.charAt(0)}
               </div>
