@@ -69,19 +69,44 @@ export const recentBookmarksSummaryStatsState = selectorFamily<
       }
       switch (interval) {
         case "DAY":
-          return dailySummaryStats;
+          return dailySummaryStats.reverse();
         case "MONTH":
-          return monthlySummaryStats;
+          return monthlySummaryStats.reverse();
         case "WEEK":
-          return weeklySummaryStats;
+          return weeklySummaryStats.reverse();
       }
     },
 });
 
 const getEmptySummaryStats = (interval: INTERVAL): BookmarkSummaryStat[] => {
+  const getIndexName = (interval: INTERVAL, index: number): string => {
+    switch (interval) {
+      case "DAY":
+        return DateTime.now()
+          .minus({
+            day: index,
+          })
+          .toFormat("LLL dd");
+      case "WEEK":
+        return DateTime.now()
+          .minus({
+            week: index,
+          })
+          .startOf("week")
+          .toFormat("LLL dd");
+      case "MONTH":
+        return DateTime.now()
+          .minus({
+            month: index,
+          })
+          .startOf("month")
+          .toFormat("LLL dd");
+    }
+  };
+
   return Array.from({ length: 7 }, (_, index) => ({
     interval,
-    name: (index + 1).toString(),
+    name: getIndexName(interval, index),
     [BookmarkType.PROVERB]: 0,
     [BookmarkType.SLANG]: 0,
     [BookmarkType.TERMINOLOGY]: 0,
